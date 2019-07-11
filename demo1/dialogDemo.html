@@ -22,26 +22,26 @@
     }
   </style>
   <script>
-    function click1() {
+    function click1(e) {
       Dialog({
         title: 'dialog1',
         text: 'this is dialog1'
       });
     }
 
-    function click2() {
+    function click2(e) {
       Dialog({
         title: 'dialog2',
         text: 'this is dialog2'
       });
     }
 
-    function click3() {
+    function click3(e) {
       // 不传参数
       Dialog();
     }
 
-    function click4() {
+    function click4(e) {
       // 参数不是obj类型
       Dialog(11111);
     }

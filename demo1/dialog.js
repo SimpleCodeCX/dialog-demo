@@ -2,13 +2,15 @@
 
   // dialog 元素的 html 模板
   const dialogTemplate = `
-  <div id="dialog-container" class="dialog-container" draggable="true" ondragstart="dragDialogStart(event)" ondragend="dragDialogEnd(event)">
-  <div id="dialog-title" class="dialog-title">react</div>
-  <div id="dialog-text" class="dialog-text">hello world</div>
-  <div>
-    <button id="dialog-cancel-btn" class="dialog-btn">取消</button>
-    <button id="dialog-confirm-btn" class="dialog-btn">确定</button>
-  </div>
+  <div id="dialog-container" class="dialog-container">
+    <div id="dialog" class="dialog" draggable="true" ondragstart="dragDialogStart(event)" ondragend="dragDialogEnd(event)">
+      <div id="dialog-title" class="dialog-title"></div>
+      <div id="dialog-text" class="dialog-text"></div>
+      <div>
+        <button id="dialog-cancel-btn" class="dialog-btn">取消</button>
+        <button id="dialog-confirm-btn" class="dialog-btn">确定</button>
+      </div>
+    </div>
   </div>
 `;
 
@@ -22,7 +24,7 @@
     options.title = options.title || 'dialog-title';
     options.text = options.text || 'dialog-text';
 
-    const dialogEl = document.getElementById('dialog-container');
+    const dialogContainerEl = document.getElementById('dialog-container');
     const dialogTitleEl = document.getElementById('dialog-title');
     const dialogTextEl = document.getElementById('dialog-text');
     const dialogCancelBtnEl = document.getElementById('dialog-cancel-btn');
@@ -32,31 +34,32 @@
     dialogTextEl.innerText = options.text;
 
     dialogCancelBtnEl.addEventListener('click', function (e) {
-      dialogEl.style = 'display:none;';
-      document.getElementsByTagName('body')[0].style = "background-color: #fff;"
-      console.log('你点击了取消按钮');
+      dialogContainerEl.style['display'] = 'none';
+      dialogContainerEl.style['background-color'] = "#fff";
+      // console.log('你点击了取消按钮');
     });
 
     dialogConfirmBtnEl.addEventListener('click', function (e) {
-      dialogEl.style = 'display:none;';
-      document.getElementsByTagName('body')[0].style = "background-color: #fff;"
-      console.log('你点击了确定按钮');
+      dialogContainerEl.style['display'] = 'none';
+      dialogContainerEl.style['background-color'] = "#fff";
+      // console.log('你点击了确定按钮');
     });
 
-    document.getElementsByTagName('body')[0].style = "background-color: #BFB7B7;"
-    dialogEl.style = 'display:block;';
+    dialogContainerEl.style['background-color'] = "#888888";
+    dialogContainerEl.style['display'] = "block";
   }
 
   let dialogLeft = 0; // 鼠标距离 dialog 左边框的距离
   let dialogTop = 0; // 鼠标距离 dialog 上边框的距离
 
   function dragDialogStart(e) {
-    dialogLeft = e.clientX - e.target.getBoundingClientRect().x;
-    dialogTop = e.clientY - e.target.getBoundingClientRect().y;
+    let boundingClientRect = e.target.getBoundingClientRect();
+    dialogLeft = e.clientX - boundingClientRect.x;
+    dialogTop = e.clientY - boundingClientRect.y;
   }
 
   function dragDialogEnd(e) {
-    const dialogEl = document.getElementById('dialog-container');
+    const dialogEl = document.getElementById('dialog');
     dialogEl.style['margin-left'] = `${e.clientX - dialogLeft}px`;
     dialogEl.style['top'] = `${e.clientY - dialogTop}px`;
   }
