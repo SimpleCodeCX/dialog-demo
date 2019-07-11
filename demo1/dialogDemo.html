@@ -8,7 +8,44 @@
   <title>dialog demo</title>
   <link rel="stylesheet" href="./dislog.css" type="text/css">
   <script src='./dialog.js'></script>
-  <script src='./dialog-demo.js'></script>
+  <style>
+    .demo-box {
+      width: 500px;
+      margin: auto;
+      margin-top: 80px;
+    }
+
+    .demo-box button {
+      margin-left: 20px;
+      width: 100px;
+      height: 30px;
+    }
+  </style>
+  <script>
+    function click1() {
+      Dialog({
+        title: 'dialog1',
+        text: 'this is dialog1'
+      });
+    }
+
+    function click2() {
+      Dialog({
+        title: 'dialog2',
+        text: 'this is dialog2'
+      });
+    }
+
+    function click3() {
+      // 不传参数
+      Dialog();
+    }
+
+    function click4() {
+      // 参数不是obj类型
+      Dialog(11111);
+    }
+  </script>
 </head>
 
 <body>
@@ -17,18 +54,6 @@
     <button onclick="click2(event)">dialog1</button>
     <button onclick="click3(event)">dialog3</button>
     <button onclick="click4(event)">dialog4</button>
-  </div>
-
-  <div class="dialog-container">
-    <div id="dialog-template" draggable="true" ondragstart="dragDialogStart(event)" ondragend="dragDialogEnd(event)"
-      class="dialog">
-      <div id="dialog-title" class="dialog-title">react</div>
-      <div id="dialog-text" class="dialog-text">hello world</div>
-      <div>
-        <button id="dialog-cancel-btn" class="dialog-btn">取消</button>
-        <button id="dialog-confirm-btn" class="dialog-btn">确定</button>
-      </div>
-    </div>
   </div>
 </body>
 

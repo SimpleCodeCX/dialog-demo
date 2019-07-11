@@ -1,17 +1,5 @@
-.demo-box {
-  width: 500px;
-  margin: auto;
-  margin-top: 80px;
-}
-
-.demo-box button {
-  margin-left: 20px;
-  width: 100px;
-  height: 30px;
-}
-
 .dialog-container {
-  border: 1px solid red;
+  display: none;
   position: absolute;
   background-color: #fff;
   width: 380px;
@@ -26,21 +14,7 @@
   top: 200px;
 }
 
-.dialog {
-  position: relative;
-  display: none;
-  /* background-color: #fff;
-  width: 380px;
-  height: 150px;
-  border: 1px solid #888888;
-  padding: 10px;
-  box-shadow: -1px 1px 3px #888888;
-  text-align: center;
-  margin: auto;
-  margin-top: 100px; */
-}
-
-.dialog:hover {
+.dialog-container:hover {
   cursor: pointer;
 }
 
