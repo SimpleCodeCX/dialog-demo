@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dialog demo</title>
+  <link rel="stylesheet" href="./dislog.css" type="text/css">
+  <script src='./dialog.js'></script>
+  <script src='./dialog-demo.js'></script>
+</head>
+
+<body>
+  <div class="demo-box">
+    <button onclick="click1(event)">dialog1</button>
+    <button onclick="click2(event)">dialog1</button>
+    <button onclick="click3(event)">dialog3</button>
+    <button onclick="click4(event)">dialog4</button>
+  </div>
+
+  <div class="dialog-container">
+    <div id="dialog-template" draggable="true" ondragstart="dragDialogStart(event)" ondragend="dragDialogEnd(event)"
+      class="dialog">
+      <div id="dialog-title" class="dialog-title">react</div>
+      <div id="dialog-text" class="dialog-text">hello world</div>
+      <div>
+        <button id="dialog-cancel-btn" class="dialog-btn">取消</button>
+        <button id="dialog-confirm-btn" class="dialog-btn">确定</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
