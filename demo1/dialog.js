@@ -14,17 +14,28 @@
   </div>
 `;
 
+  let dialogLeft = 0; // 鼠标距离 dialog 左边框的距离
+  let dialogTop = 0; // 鼠标距离 dialog 上边框的距离
+
   function Dialog(options = {}) {
+
+    dialogLeft = 0;
+    dialogTop = 0;
+
     // 创建 dialog 元素
     const dialogContainer = document.createElement('div');
     dialogContainer.innerHTML = dialogTemplate;
     document.getElementsByTagName('body')[0].appendChild(dialogContainer);
 
     options = Object.prototype.toString.call(options) !== '[object Object]' ? {} : options;
-    options.title = options.title || 'dialog-title';
-    options.text = options.text || 'dialog-text';
+    options.title = options.title || 'react';
+    options.text = options.text || 'hello-world';
+    options.size = options.size || 'normal' || 'small' || 'large'; // 定义 dialog 的大小
+    options.top = options.top || '200px';
+    options.left = options.left;
 
     const dialogContainerEl = document.getElementById('dialog-container');
+    const dialogEl = document.getElementById('dialog');
     const dialogTitleEl = document.getElementById('dialog-title');
     const dialogTextEl = document.getElementById('dialog-text');
     const dialogCancelBtnEl = document.getElementById('dialog-cancel-btn');
@@ -33,24 +44,47 @@
     dialogTitleEl.innerText = options.title;
     dialogTextEl.innerText = options.text;
 
-    dialogCancelBtnEl.addEventListener('click', function (e) {
-      dialogContainerEl.style['display'] = 'none';
-      dialogContainerEl.style['background-color'] = "#fff";
-      // console.log('你点击了取消按钮');
-    });
-
+    // 确定按钮事件
     dialogConfirmBtnEl.addEventListener('click', function (e) {
       dialogContainerEl.style['display'] = 'none';
       dialogContainerEl.style['background-color'] = "#fff";
       // console.log('你点击了确定按钮');
     });
 
+    // 取消按钮事件
+    dialogCancelBtnEl.addEventListener('click', function (e) {
+      dialogContainerEl.style['display'] = 'none';
+      dialogContainerEl.style['background-color'] = "#fff";
+      // console.log('你点击了取消按钮');
+    });
+
     dialogContainerEl.style['background-color'] = "#888888";
     dialogContainerEl.style['display'] = "block";
-  }
 
-  let dialogLeft = 0; // 鼠标距离 dialog 左边框的距离
-  let dialogTop = 0; // 鼠标距离 dialog 上边框的距离
+    let width = '380px';
+    switch (options.size) {
+      case 'small': {
+        width = '228px';
+        break;
+      }
+      case 'normal': {
+        width = '388px';
+        break;
+      }
+      case 'large': {
+        width = '488px';
+        break;
+      }
+      default: {
+        width = '380px';
+      }
+    }
+    dialogEl.style['width'] = width;
+    dialogEl.style['top'] = '200px';
+    options.left ? (dialogEl.style['margin-left'] = options.left)
+      : (dialogEl.style['margin'] = 'auto');
+
+  }
 
   function dragDialogStart(e) {
     let boundingClientRect = e.target.getBoundingClientRect();
