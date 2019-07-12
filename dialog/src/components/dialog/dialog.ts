@@ -22,7 +22,7 @@ export class Dialog {
     this.options.title = this.options.title || 'react';
     this.options.text = this.options.text || 'hello-world';
     this.options.size = this.options.size || 'normal' || 'small' || 'large'; // 定义 dialog 的大小
-    this.options.top = this.options.top || '200px';
+    this.options.top = this.options.top || '220px';
     this.options.left = this.options.left;
     this.initDialog();
   }
@@ -95,7 +95,7 @@ export class Dialog {
       }
     }
     dialogEl.style['width'] = width;
-    dialogEl.style['top'] = '200px';
+    dialogEl.style['top'] = this.options.top;
 
     this.options.left ? (dialogEl.style['margin-left'] = this.options.left)
       : (dialogEl.style['margin'] = 'auto');
