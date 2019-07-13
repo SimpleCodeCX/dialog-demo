@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "dialog",
   "scripts": {
-    "server": "webpack-dev-server --open --inline --progress --config build/webpack.dev.conf.js",
+    "serve": "webpack-dev-server --open --inline --progress --config build/webpack.dev.conf.js",
     "build": "webpack --config build/webpack.prod.conf.js"
   },
   "keywords": [

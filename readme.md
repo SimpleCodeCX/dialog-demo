@@ -6,7 +6,7 @@
  ```javascript
    cd dialog
    npm install
-   npm run server
+   npm run serve
  ```
 ## 二、编译：
  ```javascript

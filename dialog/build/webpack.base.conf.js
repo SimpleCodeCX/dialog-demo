@@ -1,6 +1,6 @@
 'use strict'
 const path = require("path");
-const isDev = /^server/.test(process.env.npm_lifecycle_event);
+const isDev = /^serve/.test(process.env.npm_lifecycle_event);
 const config = require('./config');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
