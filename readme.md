@@ -1,6 +1,6 @@
 ## 实现一个 Dialog 类，Dialog可以创建 dialog 对话框，对话框支持可拖拽。
 
-[dialog-demo](https://github.com/SimpleCodeCX/dialog-demo)
+[dialog-demo演示](http://www.cxdsimple.com/dialog-demo/)
 
 ## 一、运行：
  ```javascript
