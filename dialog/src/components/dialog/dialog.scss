@@ -5,6 +5,7 @@ $dialog-bar-background-color: #1ccc6e;
 
 .dialog-container {
   display: none;
+  overflow: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
