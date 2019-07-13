@@ -9,7 +9,9 @@ const clickFns = {
   'click5': click5,
   'click6': click6,
   'click7': click7,
-  'click8': click8
+  'click8': click8,
+  'click9': click9,
+  'click10': click10
 }
 
 const btnEls = document.querySelectorAll('.demo-box button');
@@ -86,3 +88,18 @@ function click8(e) {
   }, 200);
 }
 
+function click9(e) {
+  const dialog = new Dialog({
+    title: 'dialog9 title ',
+    text: 'this is dialog9. this is dialog9. this is dialog9. this is dialog9. this is dialog9. this is dialog9. this is dialog9. this is dialog9.'
+  });
+  dialog.open();
+}
+
+function click10(e) {
+  const dialog = new Dialog({
+    title: 'dialog10 title dialog10 title dialog10 title dialog10 title',
+    text: 'this is dialog10'
+  });
+  dialog.open();
+}

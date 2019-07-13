@@ -1,4 +1,4 @@
-.github-code{
+.github-code {
   margin: auto;
   margin-top: 50px;
   text-align: center;
@@ -8,11 +8,13 @@
   width: 500px;
   margin: auto;
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .demo-box button {
   width: 120px;
-  height: 30px;
+  height: 40px;
   margin-left: 20px;
   margin-top: 10px;
 }
