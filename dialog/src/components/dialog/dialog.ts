@@ -33,6 +33,7 @@ export class Dialog {
   initDialog() {
     // 创建 dialog 元素
     this.dialogElement = document.createElement('div');
+    this.dialogElement.setAttribute('id', 'simple-dialog');
     this.dialogElement.innerHTML = dialogTemplate;
     document.getElementsByTagName('body')[0].appendChild(this.dialogElement);
 
