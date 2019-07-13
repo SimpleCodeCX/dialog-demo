@@ -103,3 +103,9 @@ function click10(e) {
   });
   dialog.open();
 }
+
+const dialog = new Dialog({
+  title: 'dialog',
+  text: 'hello I am dialog.'
+});
+dialog.open();

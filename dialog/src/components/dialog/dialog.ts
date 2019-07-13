@@ -78,23 +78,28 @@ export class Dialog {
     dialogContainerEl.style['background-color'] = "#888888";
 
     let width = '380px';
+
+    const screenWidth = screen.width; // 获取屏幕宽度
+    const isMobile = screenWidth < 400; // 是否为小屏幕设备
+
     switch (this.options.size) {
       case 'small': {
-        width = '228px';
+        width = isMobile ? `${screenWidth - 60}px` : '228px';
         break;
       }
       case 'normal': {
-        width = '388px';
+        width = isMobile ? `${screenWidth - 40}px` : '388px';
         break;
       }
       case 'large': {
-        width = '488px';
+        width = isMobile ? `${screenWidth - 20}px` : '488px';
         break;
       }
       default: {
-        width = '380px';
+        width = isMobile ? `${screenWidth - 40}px` : '388px';
       }
     }
+
     dialogEl.style['width'] = width;
     dialogEl.style['top'] = this.options.top;
 
